@@ -1,0 +1,6 @@
+
+*.vsidx
+*.vs
+*.vscode
+*/bin
+*/obj
