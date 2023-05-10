@@ -1,6 +1,6 @@
-
 *.vsidx
 *.vs
 *.vscode
 */bin
 */obj
+*lib
