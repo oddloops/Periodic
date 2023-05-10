@@ -12,16 +12,16 @@ public class Element {
     public float IonizationEnergy { get; set; }
     public float ElectionAffinity { get; set; }
     public List<string> OxidationStates { get; set; } = new List<string>();
-    public string? StandardState { get; set; }
+    public string StandardState { get; set; } = "";
     public float MeltingPoint { get; set; }
     public float BoilingPoint { get; set; }
     public double Density { get; set; }
     public string GroupBlock { get; set; } = "";
     public int YearDiscovered { get; set; }
-    
+
     // Grid Placement
-    public int Row { get; set; }
-    public int Column { get; set; }
+    public int Row { get; set; } = 0;
+    public int Column { get; set; } = 0;
 
     public override string ToString()
     {
