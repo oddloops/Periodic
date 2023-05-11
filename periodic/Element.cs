@@ -5,9 +5,9 @@ public class Element {
     public string Symbol { get; set; } = "";
     public string Name { get; set; } = "";
     public float AtomicMass { get; set; } 
-    public string color { get; set; } = "";
+    public string ElementColor { get; set; } = "";
     public string ElectronConfiguration { get; set; } = "";
-    public float ElectroNegativity { get; set; }
+    public float Electronegativity { get; set; }
     public int AtomicRadius { get; set; }
     public float IonizationEnergy { get; set; }
     public float ElectionAffinity { get; set; }
@@ -26,7 +26,7 @@ public class Element {
     public override string ToString()
     {
         string oxidationStates = string.Join(",", OxidationStates);
-        return $"Atomic Number: {AtomicNumber}\nSymbol: {Symbol}\nName: {Name}\nAtomic Mass: {AtomicMass}\nColor: {color}\nElectron Configuration: {ElectronConfiguration}\nElectronegativity: {ElectroNegativity}\nAtomic Radius: {AtomicRadius}\nIonization Energy: {IonizationEnergy}\nElectron Affinity: {ElectionAffinity}\nOxidation States: {oxidationStates}\nStandard State: {StandardState}\nMelting Point: {MeltingPoint}\nBoiling Point: {BoilingPoint}\nDensity: {Density}\nGroup Block: {GroupBlock}\nYear Discovered: {YearDiscovered}";
+        return $"Atomic Number: {AtomicNumber}\nSymbol: {Symbol}\nName: {Name}\nAtomic Mass: {AtomicMass}\nColor: {ElementColor}\nElectron Configuration: {ElectronConfiguration}\nElectronegativity: {Electronegativity}\nAtomic Radius: {AtomicRadius}\nIonization Energy: {IonizationEnergy}\nElectron Affinity: {ElectionAffinity}\nOxidation States: {oxidationStates}\nStandard State: {StandardState}\nMelting Point: {MeltingPoint}\nBoiling Point: {BoilingPoint}\nDensity: {Density}\nGroup Block: {GroupBlock}\nYear Discovered: {YearDiscovered}";
     }
 
 }
