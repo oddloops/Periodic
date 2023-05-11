@@ -6,7 +6,18 @@
         xmlns:local="clr-namespace:periodic"
         mc:Ignorable="d"
         Title="Periodic" WindowState="Maximized">
-    <Grid x:Name="PeriodicTable">
+  <Grid>
+    <!-- Set Header and Main Content rows-->
+    <Grid.RowDefinitions>
+      <RowDefinition Height="Auto"/> <!-- Header -->
+      <RowDefinition Height="*" /> <!-- Content -->
+    </Grid.RowDefinitions>
+
+    <!-- Header -->
+    <TextBlock Text="Periodic Table of Known Elements" FontSize="22" Margin="10" />
+    
+    <!-- Periodic Table Content -->
+    <Grid x:Name="PeriodicTable" Grid.Row="1">
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
@@ -41,4 +52,5 @@
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
     </Grid>
+  </Grid>
 </Window>
