@@ -14,7 +14,7 @@
     </Grid.RowDefinitions>
 
     <!-- Header -->
-    <TextBlock Text="Periodic Table of Known Elements" FontSize="30" Margin="350, 0, 0, 25" />
+    <TextBlock Text="Periodic Table of Elements" FontSize="30" Margin="350, 0, 0, 25" />
     
     <!-- Periodic Table Content -->
     <Grid x:Name="PeriodicTable" Grid.Row="1">
