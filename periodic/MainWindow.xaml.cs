@@ -24,22 +24,6 @@ namespace periodic
     /// </summary>
     public partial class MainWindow : Window
     {
-        /*private List<Element> elements = new List<Element>
-        {
-            new Element {AtomicNumber = 1, Symbol = "H", Name = "Hydrogen", AtomicMass = 1.0080F, ElementColor = "", 
-                ElectronConfiguration = "1s^1", Electronegativity = 2.2F, AtomicRadius = 120, IonizationEnergy = 13.598F, ElectionAffinity = 0.754F, 
-                OxidationStates = new List<string>(){"+1", "-1"}, StandardState = "Gas", MeltingPoint = 13.81F, BoilingPoint = 20.28F,
-                Density = 0.00008988, GroupBlock = "Nonmetal", YearDiscovered = 1766, Row = 0, Column = 0},
-            new Element {AtomicNumber = 2, Symbol = "He", Name = "Helium", AtomicMass = 4.00260F, ElementColor = "",
-                ElectronConfiguration = "1s^2", Electronegativity = 2.2F, AtomicRadius = 140, IonizationEnergy = 24.587F, ElectionAffinity = -0.5F,
-                OxidationStates = {"0"}, StandardState = "Gas", MeltingPoint = 0.95F, BoilingPoint = 4.22F,
-                Density = 0.0001785, GroupBlock = "Noble Gas", YearDiscovered = 1868, Row = 0, Column = 19},
-            new Element {AtomicNumber = 3, Symbol = "Li", Name = "Lithium", AtomicMass = 7.0F, ElementColor = "",
-                ElectronConfiguration = "[He]2s^1", Electronegativity = 0.98F, AtomicRadius = 182, IonizationEnergy = 5.392F, ElectionAffinity = 5.392F,
-                OxidationStates = {"+1"}, StandardState = "Solid", MeltingPoint = 453.65F, BoilingPoint = 1615F,
-                Density = 0.534, GroupBlock = "Alkali Metal", YearDiscovered = 1817, Row = 1, Column = 0}
-        };*/
-
         public MainWindow()
         {
             InitializeComponent();
