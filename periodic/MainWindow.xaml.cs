@@ -101,9 +101,6 @@ namespace periodic
                     PeriodicTable.Children.Add(border);
                 }
             }
-
-            // Add elements to their proper place
-            /**/
         }
     }
 }
