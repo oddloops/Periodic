@@ -29,6 +29,10 @@ namespace periodic
             InitializeComponent();
 
             // Parse the CSV
+            /* 
+             * Data received from:
+             * National Center for Biotechnology Information (2023). Periodic Table of Elements. Retrieved May 15, 2023 from https://pubchem.ncbi.nlm.nih.gov/periodic-table/.
+            */
             using (var reader = new StreamReader("pubchem-elements.csv"))
             using (var csv = new CsvReader(reader, CultureInfo.InvariantCulture))
             {
@@ -46,6 +50,11 @@ namespace periodic
                     StackPanel stackPanel = new StackPanel();
                     stackPanel.Orientation = Orientation.Vertical;
 
+                    // Add the CPK coloring for the element
+                    //Color elementColor = (string.IsNullOrEmpty(el.CPKHexColor) ? Colors.Transparent : (Color)ColorConverter.ConvertFromString("#" + el.CPKHexColor));
+                    Color elementColor = (Color)ColorConverter.ConvertFromString(element.GroupColor(el.GroupBlock));
+                    stackPanel.Background = new SolidColorBrush(elementColor);
+                  
                     // Create a horizontal Stack Panel
                     DockPanel atomicData = new DockPanel();
 

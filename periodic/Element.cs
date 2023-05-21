@@ -5,6 +5,54 @@ public class PeriodicElement
     public Element? Element { get; set; }
     public int Row { get; set; }
     public int Column { get; set; }
+
+    public string GroupColor (string groupName)
+    {
+        if (groupName == "Alkali metal")
+        {
+            return "#CC8587"; // old rose
+        }
+        else if (groupName == "Alkaline earth metal")
+        {
+            return "#FFA000"; // orange peel
+        }
+        else if (groupName == "Transition metal")
+        {
+            return "#D8D8FF"; // periwinkle
+        }
+        else if (groupName == "Post-transition metal")
+        {
+            return "#D0F0C0"; // tea green
+        }
+        else if (groupName == "Metalloid")
+        {
+            return "#FF96D1"; // persian pink
+        }
+        else if (groupName == "Nonmetal")
+        {
+            return "#95E1FF"; // pale azure
+        }
+        else if (groupName == "Halogen")
+        {
+            return "#FFCC75"; // sunset
+        }
+        else if (groupName == "Noble gas")
+        {
+            return "#FFEB7B"; // maize
+        }
+        else if (groupName == "Lanthanide")
+        {
+            return "#C6E9FD"; // columbia blue
+        }
+        else if (groupName == "Actinide")
+        {
+            return "#FFDAE0"; // mimi pink
+        }
+        else
+        {
+            return "#FFFFFF";
+        }
+    }
 }
 
 public class Element {
