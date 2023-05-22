@@ -104,12 +104,32 @@ namespace periodic
                     border.Child = stackPanel;
                     border.Margin = new Thickness(1);
 
+                    // Add an event handler for when mouse enters/leave
+                    border.Loaded += EnlargeElement;
+
                     // Add the Border to the grid
                     Grid.SetRow(border, element.Row);
                     Grid.SetColumn(border, element.Column);
                     PeriodicTable.Children.Add(border);
                 }
             }
+        }
+        private void EnlargeElement(object sender, RoutedEventArgs e)
+        {
+            Border border = (Border)sender;
+            border.MouseEnter += MouseEnterEnlargeElement;
+            border.MouseLeave += MouseLeaveEnlargeElement;
+        }
+        private void MouseEnterEnlargeElement(object sender, RoutedEventArgs e)
+        {
+            Border border = (Border)sender;
+
+        }
+        private void MouseLeaveEnlargeElement(object sender, RoutedEventArgs e)
+        {
+            Border border = (Border)sender;
+            border.RenderTransform = null;
+
         }
     }
 }
