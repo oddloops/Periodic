@@ -1,10 +1,14 @@
 using System.Collections.Generic;
+using Models;
 
-public static class PeriodicElementInitializer { 
-    // Get a list of elements and produce the Periodic Table
-    public static List<PeriodicElement> GetPeriodicTableElements (List<Element> elements)
+namespace Models
+{
+    public static class PeriodicElementInitializer
     {
-        return new List<PeriodicElement>
+        // Get a list of elements and produce the Periodic Table
+        public static List<PeriodicElement> GetPeriodicTableElements(List<Element> elements)
+        {
+            return new List<PeriodicElement>
         {
             new PeriodicElement { Element = elements[0], Row = 0, Column = 0 },
             new PeriodicElement { Element = elements[1], Row = 0, Column = 17 },
@@ -127,5 +131,7 @@ public static class PeriodicElementInitializer {
             new PeriodicElement { Element = elements[101], Row = 9, Column = 16},
             new PeriodicElement { Element = elements[102], Row = 9, Column = 17},
         };
+        }
     }
 }
+
