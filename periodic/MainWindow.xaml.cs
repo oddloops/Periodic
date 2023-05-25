@@ -18,6 +18,7 @@ using System.Windows.Shapes;
 using CsvHelper;
 using CsvHelper.Configuration;
 using Models;
+using ElementWindows;
 
 namespace periodic
 {
@@ -118,6 +119,8 @@ namespace periodic
                 }
             }
         }
+
+        /* Animation for enlarging an element */
         // value of scaling
         private const double enlargeScale = 1.15;
 
