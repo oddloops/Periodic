@@ -2,7 +2,7 @@ using System.Windows;
 using System.Windows.Controls;
 using Models;
 
-namespace ElementWindows
+namespace ElementEvents
 {
     public partial class ElementPopupWindow : Window
     {
