@@ -7,10 +7,10 @@ namespace ElementWindows
     {
         public ElementPopupWindow()
         {
-            InitializeUI();
+            ElementInformation();
         }
 
-        private void InitializeUI()
+        private void ElementInformation()
         {
             
         }
