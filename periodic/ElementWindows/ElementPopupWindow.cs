@@ -10,12 +10,16 @@ namespace ElementWindows
         public ElementPopupWindow(Element element)
         {
             this.el = element;
-            ElementInformation();
+            ElementInformation(el);
         }
 
-        private void ElementInformation()
+        private void ElementInformation(Element el)
         {
-            
+            // 2 column grid to display element information
+            Grid grid = new Grid();
+            grid.ColumnDefinitions.Add(new ColumnDefinition());
+            grid.ColumnDefinitions.Add(new ColumnDefinition());
+
         }
     }
 }
