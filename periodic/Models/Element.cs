@@ -69,7 +69,7 @@ namespace Models
         public string AtomicRadius { get; set; } = "";
         public string IonizationEnergy { get; set; } = "";
         public string ElectronAffinity { get; set; } = "";
-        public List<string> OxidationStates { get; set; } = new List<string>();
+        public string OxidationStates { get; set; } = "";
         public string StandardState { get; set; } = "";
         public string MeltingPoint { get; set; } = "";
         public string BoilingPoint { get; set; } = "";
