@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Controls.Primitives;
 using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
@@ -27,9 +28,16 @@ namespace periodic
     /// </summary>
     public partial class MainWindow : Window
     {
+        private Popup elementPopup;
+
         public MainWindow()
         {
             InitializeComponent();
+
+            elementPopup = new Popup();
+            elementPopup.Width = 300;
+            elementPopup.Placement = PlacementMode.Mouse;
+            elementPopup.StaysOpen = false;
 
             // Parse the CSV
             /* 
@@ -54,7 +62,6 @@ namespace periodic
                         stackPanel.Orientation = Orientation.Vertical;
 
                         // Add the CPK coloring for the element
-                        //Color elementColor = (string.IsNullOrEmpty(el.CPKHexColor) ? Colors.Transparent : (Color)ColorConverter.ConvertFromString("#" + el.CPKHexColor));
                         Color elementColor = (Color)ColorConverter.ConvertFromString(element.GroupColor(el.GroupBlock));
                         stackPanel.Background = new SolidColorBrush(elementColor);
 
@@ -107,8 +114,12 @@ namespace periodic
                         border.Child = stackPanel;
                         border.Margin = new Thickness(1);
 
-                        // Add an event handler for when mouse enters/leave
+                        // Add the element to the the table's data context
+                        border.DataContext = el;
+
+                        // Add an event handler for when mouse enters/leave and clicked
                         border.Loaded += EnlargeEvent.EnlargeElement;
+                        border.MouseLeftButtonUp += ElementClick;
 
                         // Add the Border to the grid
                         Grid.SetRow(border, element.Row);
@@ -117,6 +128,43 @@ namespace periodic
                     }
                 }
             }
+        }
+
+        void ElementClick(object sender, RoutedEventArgs e)
+        {
+            Border border = (Border)sender;
+            Element clickedElement = (Element)border.DataContext;
+            ShowElementPopup(clickedElement);
+        }
+
+        private void ShowElementPopup(Element element)
+        {
+            StackPanel stackPanel = new StackPanel();
+            stackPanel.Orientation = Orientation.Vertical;
+            stackPanel.Background = new SolidColorBrush(Colors.White);
+            stackPanel.Margin = new Thickness(1);
+
+            // Create the popup
+            var elementProperties = typeof(Element).GetProperties();
+            foreach (var property in elementProperties)
+            {
+                TextBlock elementData = new TextBlock();
+                Run propertyName = new Run(property.Name + ": ");
+                propertyName.FontWeight = FontWeights.Bold;
+                Run propertyData = new Run(property.GetValue(element).ToString());
+                elementData.Inlines.Add(propertyName);
+                elementData.Inlines.Add(propertyData);
+                elementData.FontSize = 14;
+                stackPanel.Children.Add(elementData);
+            }
+            elementPopup.Child = stackPanel;
+
+            // Position the Popup relative to the mouse cursor
+            elementPopup.HorizontalOffset = Mouse.GetPosition(this).X + 10;
+            elementPopup.VerticalOffset = Mouse.GetPosition(this).Y + 10;
+
+            // Open the Popup
+            elementPopup.IsOpen = true;
         }
     }
 }
