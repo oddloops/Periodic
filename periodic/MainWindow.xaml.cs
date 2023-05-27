@@ -151,7 +151,7 @@ namespace periodic
                 TextBlock elementData = new TextBlock();
                 Run propertyName = new Run(property.Name + ": ");
                 propertyName.FontWeight = FontWeights.Bold;
-                Run propertyData = new Run(property.GetValue(element).ToString());
+                Run propertyData = new Run((property.GetValue(element) ?? string.Empty).ToString());
                 elementData.Inlines.Add(propertyName);
                 elementData.Inlines.Add(propertyData);
                 elementData.FontSize = 14;
