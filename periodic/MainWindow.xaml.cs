@@ -134,10 +134,10 @@ namespace periodic
         {
             Border border = (Border)sender;
             Element clickedElement = (Element)border.DataContext;
-            ShowElementPopup(clickedElement);
+            ShowElementPopup(clickedElement, border);
         }
 
-        private void ShowElementPopup(Element element)
+        private void ShowElementPopup(Element element, FrameworkElement elementTarget)
         {
             StackPanel stackPanel = new StackPanel();
             stackPanel.Orientation = Orientation.Vertical;
@@ -159,9 +159,9 @@ namespace periodic
             }
             elementPopup.Child = stackPanel;
 
-            // Position the Popup relative to the mouse cursor
-            elementPopup.HorizontalOffset = Mouse.GetPosition(this).X + 10;
-            elementPopup.VerticalOffset = Mouse.GetPosition(this).Y + 10;
+            // Position the Popup relative to the placementTarget
+            elementPopup.PlacementTarget = elementTarget;
+            elementPopup.Placement = PlacementMode.Right;
 
             // Open the Popup
             elementPopup.IsOpen = true;
