@@ -8,15 +8,6 @@
         mc:Ignorable="d"
         Title="Periodic" WindowState="Maximized">
   <Grid>
-    <!-- Set Header and Main Content rows-->
-    <Grid.RowDefinitions>
-      <RowDefinition Height="Auto"/> <!-- Header -->
-      <RowDefinition Height="*" /> <!-- Content -->
-    </Grid.RowDefinitions>
-
-    <!-- Header -->
-    <TextBlock Text="Periodic Table of Elements" FontSize="30" Margin="350, 0, 0, 25" />
-    
     <!-- Periodic Table Content -->
     <Grid x:Name="PeriodicTable" Grid.Row="1">
         <Grid.RowDefinitions>
@@ -51,8 +42,10 @@
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
+      <!-- Header -->
+      <TextBlock Grid.Row="0" Grid.Column="5" Grid.ColumnSpan="5" Text="Periodic Table of Elements" FontSize="30"/>
       <!-- Added a title for F-Block elements -->
-      <TextBlock Grid.Row="7" Grid.Column="3" Grid.ColumnSpan="2" Text="F-Block" FontSize="25" VerticalAlignment="Bottom"/>
+      <TextBlock Grid.Row="7" Grid.Column="2" Grid.ColumnSpan="2" Text="F-Block" FontSize="25" VerticalAlignment="Bottom"/>
     </Grid>
   </Grid>
 </Window>
