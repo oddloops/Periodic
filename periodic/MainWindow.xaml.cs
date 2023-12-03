@@ -40,14 +40,14 @@ namespace periodic
             elementPopup.StaysOpen = false;
 
             // Parse the CSV
-            /* 
+            /*
              * Data received from:
              * National Center for Biotechnology Information (2023). Periodic Table of Elements. Retrieved May 15, 2023 from https://pubchem.ncbi.nlm.nih.gov/periodic-table/.
             */
             using (var reader = new StreamReader("pubchem-elements.csv"))
             using (var csv = new CsvReader(reader, CultureInfo.InvariantCulture))
             {
-                // Create a list of Elements 
+                // Create a list of Elements
                 List<Element> elements = csv.GetRecords<Element>().ToList();
 
                 // Set each element's row and column placement (0 - 117 for 118 el & 10 x 18 rows)
@@ -57,7 +57,7 @@ namespace periodic
                     Element? el = element.Element;
                     if (el != null)
                     {
-                        // Create a Stack Panel 
+                        // Create a Stack Panel
                         StackPanel stackPanel = new StackPanel();
                         stackPanel.Orientation = Orientation.Vertical;
 
@@ -65,7 +65,7 @@ namespace periodic
                         Color elementColor = (Color)ColorConverter.ConvertFromString(element.GroupColor(el.GroupBlock));
                         stackPanel.Background = new SolidColorBrush(elementColor);
 
-                        // Create a horizontal Stack Panel
+                        // Create a horizontal Stack Parnel
                         DockPanel atomicData = new DockPanel();
 
                         // Add Atomic Number to upper left

@@ -11,7 +11,7 @@
     <PackageReference Include="CsvHelper" Version="30.0.1" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
     <PackageReference Include="RavenDB.Embedded" Version="5.4.103" />
-    <None Update="pubchem-elements.csv">
+    <None Include="pubchem-elements.csv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
   </ItemGroup>
